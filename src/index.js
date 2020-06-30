@@ -1,5 +1,7 @@
-import "./style.scss";
-import "bootstrap";
-import { eventListeners } from "./event_listeners";
+import './style.scss';
+import 'bootstrap';
+import renderPageOne from './pageOne';
+import { content } from './elements';
 
-eventListeners();
+console.log(content);
+renderPageOne.renderPageOne();
