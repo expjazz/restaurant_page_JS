@@ -5,14 +5,10 @@ const regeneratorRuntime = require('regenerator-runtime');
 const foodAwait = require('./menuApi');
 
 
-const tempHelper = async (data) => {
-
-};
-
 const showMenu = async (e) => {
   e.preventDefault();
   const data = await foodAwait.foodAwait();
-  console.log(data.recipes[0].image);
+  console.log(data);
 
   const content = document.querySelector('.content');
   content.innerHTML = `      <div class="container-fluid h-100 pt-5 w-100 bg-light">

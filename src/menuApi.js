@@ -1,7 +1,7 @@
 const regeneratorRuntime = require('regenerator-runtime');
 
 const foodAwait = async () => {
-  const jsonData = await fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=1&tags=vegetarian%252Cdessert', {
+  const jsonData = await fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=4&tags=dessert', {
     method: 'GET',
     headers: {
       'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
@@ -9,7 +9,8 @@ const foodAwait = async () => {
     },
   });
   const data = await jsonData.json();
+  console.log(data);
   return data;
 };
 
-export { foodAwait };
+export default { foodAwait };
