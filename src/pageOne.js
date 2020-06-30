@@ -1,9 +1,12 @@
-import * as elements from './elements';
+// import * as elements from './elements';
 import eventListeners from './event_listeners';
+import grabElements from './elements';
+
+const content = document.querySelector('.content');
 
 const renderPageOne = () => {
   console.log('a');
-  elements.content.innerHTML = `   <div class="container-fluid h-100 pt-5 w-100 bg-light">
+  content.innerHTML = `   <div class="container-fluid h-100 pt-5 w-100 bg-light">
   <div class="container mt-3 shadow-lg content">
     <div class="navbar navbar-expand-lg">
       <div class="dropdownBackground">
@@ -14,7 +17,7 @@ const renderPageOne = () => {
       >
       <ul class="navbar-nav">
         <li class="nav-item w-50">
-          <a href="#" class="nav-link text-black-50 font-weight-bold"
+          <a href="#" class="nav-link text-black-50 font-weight-bold" id="home-btn"
             >Home</a
           >
           <div class="dropdown-effect">
@@ -25,7 +28,7 @@ const renderPageOne = () => {
           </div>
         </li>
         <li class="nav-item w-50">
-          <a href="#" class="nav-link text-black-50 font-weight-bold"
+          <a href="#" class="nav-link text-black-50 font-weight-bold" id="contact-btn"
             >Contact</a
           >
           <div class="dropdown-effect">
@@ -34,7 +37,7 @@ const renderPageOne = () => {
           </div>
         </li>
         <li class="nav-item w-50">
-          <a href="#" class="nav-link text-black-50 font-weight-bold"
+          <a href="#" class="nav-link text-black-50 font-weight-bold" id="menu-btn"
             >Menu</a
           >
           <div class="dropdown-effect">
@@ -103,7 +106,7 @@ const renderPageOne = () => {
     </div>
   </div>
 </div>`;
-  eventListeners.eventListeners();
+  eventListeners.eventListeners(grabElements.grabElements());
 };
 
 export default { renderPageOne };

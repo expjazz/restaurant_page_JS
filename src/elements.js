@@ -1,9 +1,13 @@
+function grabElements() {
+  return {
+    dropdownTrigger: document.querySelectorAll('.navbar li'),
+    dropdownBackground: document.querySelector('.dropdownBackground'),
+    navbar: document.querySelector('.navbar'),
+    homeBtn: document.getElementById('home-btn'),
+    contactBtn: document.getElementById('contact-btn'),
+    menuBtn: document.getElementById('menu-btn'),
 
-const dropdownTrigger = document.querySelectorAll('.navbar li');
-const dropdownBackground = document.querySelector('.dropdownBackground');
-const navbar = document.querySelector('.navbar');
-const content = document.querySelector('.content');
+  };
+}
 // const pageOneButton = document.getElementById('pageOneBtn');
-export {
-  dropdownTrigger, dropdownBackground, navbar, content,
-};
+export default { grabElements };
