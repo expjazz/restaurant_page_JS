@@ -3,7 +3,7 @@ import showContact from './contactPage';
 import showMenu from './contactMenu';
 import renderPageOne from './pageOne';
 
-const eventListeners = (elements) => {
+const eventListeners = async (elements) => {
   const {
     dropdownTrigger, menuBtn, contactBtn, homeBtn,
   } = elements;

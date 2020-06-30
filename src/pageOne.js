@@ -2,10 +2,10 @@
 import eventListeners from './event_listeners';
 import grabElements from './elements';
 
-const content = document.querySelector('.content');
 
 const renderPageOne = () => {
-  console.log('a');
+  const content = document.querySelector('.content');
+  console.log(content);
   content.innerHTML = `   <div class="container-fluid h-100 pt-5 w-100 bg-light">
   <div class="container mt-3 shadow-lg content">
     <div class="navbar navbar-expand-lg">

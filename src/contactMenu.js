@@ -1,10 +1,18 @@
 import eventListeners from './event_listeners';
 import grabElements from './elements';
 
+const regeneratorRuntime = require('regenerator-runtime');
+const foodAwait = require('./menuApi');
 
-const showMenu = (e) => {
-  console.log('a');
+
+const tempHelper = async (data) => {
+
+};
+
+const showMenu = async (e) => {
   e.preventDefault();
+  const data = await foodAwait.foodAwait();
+  console.log(data.recipes[0].image);
 
   const content = document.querySelector('.content');
   content.innerHTML = `      <div class="container-fluid h-100 pt-5 w-100 bg-light">
@@ -57,7 +65,20 @@ const showMenu = (e) => {
         </li>
       </ul>
     </div>
-    <div class="row"></div>
+    <div class="row">
+      <div class="col-12"> 
+      <div class="card">
+      <img class="card-img-top" src="${data.recipes[0].image}" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title">${data.recipes[0].title}</h4>
+        <p class="card-text">
+          ${data.recipes[0].readyInMinutes}
+        </p>
+        <a href="#!" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+      </div>
+    </div>
   </div>
 </div>`;
   eventListeners.eventListeners(grabElements.grabElements());
