@@ -1,5 +1,5 @@
 import elements from './elements';
-
+import darkStatus from './index';
 
 const handleEnter = (e) => {
   const { dropdownBackground, navbar } = elements.grabElements();
@@ -64,6 +64,7 @@ const darkMode = (e) => {
   content.classList.toggle('h-1000');
   document.querySelector('.container').classList.toggle('bg-dark');
   document.querySelectorAll('.card').forEach((card) => card.classList.toggle('bg-secondary'));
+  darkStatus.darkModeObj.status = !darkStatus.darkModeObj.status;
 };
 
 export {

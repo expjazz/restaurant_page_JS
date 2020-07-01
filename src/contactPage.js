@@ -2,14 +2,17 @@
 import eventListeners from './event_listeners';
 import grabElements from './elements';
 import { navbar } from './navbar';
+import darkStatus from './index';
 
 import footer from './footer';
 
 const showContact = (e) => {
   e.preventDefault();
   const content = document.querySelector('.content');
-  content.innerHTML = `      <div class="container-fluid h-100 pt-5 w-100 bg-light">
-  <div class="container mt-3 shadow-lg content">
+  content.innerHTML = `        <div class="container-fluid 
+  
+  pt-5 w-100 ${darkStatus.darkModeObj.status ? 'contentDark h-1000 h-100' : ''}">
+  <div class="container ${darkStatus.darkModeObj.status ? 'bg-dark' : ''}  mt-3 shadow-lg content">
   ${navbar}
 
     <div class="row">

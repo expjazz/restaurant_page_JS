@@ -2,6 +2,7 @@ import eventListeners from './event_listeners';
 import grabElements from './elements';
 import { navbar } from './navbar';
 import footer from './footer';
+import darkStatus from './index';
 
 
 const regeneratorRuntime = require('regenerator-runtime');
@@ -17,8 +18,10 @@ const showMenu = async (e) => {
   const data4 = await menuApi.foodAwait();
   const mealList = [data, data2, data3, data4];
   const content = document.querySelector('.content');
-  content.innerHTML = `      <div class="container-fluid h-100 pt-5 w-100 bg-light">
-  <div class="container mt-3 shadow-lg content">
+  content.innerHTML = `         <div class="container-fluid 
+  
+  pt-5 w-100 ${darkStatus.darkModeObj.status ? 'contentDark h-1000' : 'bg-light h-100'}">
+  <div class="container ${darkStatus.darkModeObj.status ? 'bg-dark' : ''}  mt-3 shadow-lg content">
   ${navbar}
 
     <div class='row'> 
@@ -32,7 +35,7 @@ const showMenu = async (e) => {
       (recipes) => `
           <div class="col-6">
 
-        <div class="card h-75 align-items-center border-rounded p-3">
+        <div class="card ${darkStatus.darkModeObj.status ? 'bg-secondary' : ''} h-75 align-items-center border-rounded p-3">
         <img class="card-img-top w-50 h-50" src="${recipes.meals[0].strMealThumb}" alt="Card image">
         <div class="card-body">
           <h4 class="card-title">${recipes.meals[0].strMeal}</h4>
