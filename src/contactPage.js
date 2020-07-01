@@ -65,7 +65,7 @@ const showContact = (e) => {
   </div>
   <div class="row">
     <div class="col-9 text-center mx-auto"> 
-        <form id="contactForm">
+        <form id="contactForm" class="mt-5">
       <div class="form-group">
         <label for="exampleFormControlInput1">Email address</label>
         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">

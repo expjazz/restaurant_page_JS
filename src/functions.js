@@ -37,9 +37,25 @@ const handleLeave = (e) => {
 
 const showForm = (e) => {
   e.preventDefault();
+  console.log('a');
   const { form } = elements.grabElements();
-  form.classList.add('active');
-  setTimeout(() => form.classList.add('active-op'), 150);
+  console.log(form);
+  if (!form.classList.contains('active-op')) {
+    form.classList.add('active');
+    setTimeout(() => form.classList.add('active-op'), 150);
+  }
 };
 
-export { handleEnter, handleLeave, showForm };
+const showFormOpposite = (e) => {
+  e.preventDefault();
+  console.log('b');
+  const { form } = elements.grabElements();
+  if (form.classList.contains('active-op')) {
+    form.classList.remove('active-op');
+    setTimeout(() => form.classList.remove('active'), 150);
+  }
+};
+
+export {
+  handleEnter, handleLeave, showForm, showFormOpposite,
+};

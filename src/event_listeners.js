@@ -20,7 +20,11 @@ const eventListeners = async (elements) => {
   contactBtn.addEventListener('click', showContact.showContact);
   menuBtn.addEventListener('click', showMenu.showMenu);
   homeBtn.addEventListener('click', renderPageOne.renderPageOne);
-  formBtn.addEventListener('click', functions.showForm);
+  console.log(formBtn);
+  if (homeBtn && formBtn) {
+    formBtn.addEventListener('click', functions.showForm);
+    formBtn.addEventListener('click', functions.showFormOpposite);
+  }
 };
 
 export default { eventListeners };
