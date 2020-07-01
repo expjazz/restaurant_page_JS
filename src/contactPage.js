@@ -12,7 +12,7 @@ const showContact = (e) => {
       <div class="dropdownBackground">
         <span class="arrow"></span>
       </div>
-      <a href="#" class="navbar-brand text-black-50 font-weight-bold"
+      <a href="#" class="navbar-brand text-black-50 font-weight-bold" id="restaurant"
         >My Restaurant</a
       >
       <ul class="navbar-nav">

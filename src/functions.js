@@ -5,6 +5,7 @@ const handleEnter = (e) => {
   const { dropdownBackground, navbar } = elements.grabElements();
   e.target.classList.add('trigger-enter');
   setTimeout(() => e.target.classList.add('trigger-enter-active'), 150);
+
   dropdownBackground.classList.add('open');
   const dropdown = e.target.querySelector('.dropdown-effect');
   const dropdownCoords = dropdown.getBoundingClientRect();

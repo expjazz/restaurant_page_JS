@@ -1,8 +1,8 @@
-import eventListeners from "./event_listeners";
-import grabElements from "./elements";
+import eventListeners from './event_listeners';
+import grabElements from './elements';
 
-const regeneratorRuntime = require("regenerator-runtime");
-const menuApi = require("./menuApi");
+const regeneratorRuntime = require('regenerator-runtime');
+const menuApi = require('./menuApi');
 
 const showMenu = async (e) => {
   e.preventDefault();
@@ -13,14 +13,14 @@ const showMenu = async (e) => {
 
   const data4 = await menuApi.foodAwait();
   const mealList = [data, data2, data3, data4];
-  const content = document.querySelector(".content");
+  const content = document.querySelector('.content');
   content.innerHTML = `      <div class="container-fluid h-100 pt-5 w-100 bg-light">
   <div class="container mt-3 shadow-lg content">
     <div class="navbar navbar-expand-lg">
       <div class="dropdownBackground">
         <span class="arrow"></span>
       </div>
-      <a href="#" class="navbar-brand text-black-50 font-weight-bold"
+      <a href="#" class="navbar-brand text-black-50 font-weight-bold" id="restaurant"
         >My Restaurant</a
       >
       <ul class="navbar-nav">
@@ -71,8 +71,8 @@ const showMenu = async (e) => {
     </div>
     <div class="row">
       ${mealList
-        .map(
-          (recipes) => `
+    .map(
+      (recipes) => `
           <div class="col-6">
 
         <div class="card h-75 align-items-center border-rounded p-3">
@@ -86,9 +86,9 @@ const showMenu = async (e) => {
         </div>
       </div>
       </div>
-      `
-        )
-        .join("")} 
+      `,
+    )
+    .join('')} 
 
     </div>
   </div>
