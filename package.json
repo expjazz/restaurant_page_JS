@@ -14,7 +14,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/expjazz/restaurant_page_JS/issues"
   },
@@ -34,6 +34,7 @@
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
+    "regenerator-runtime": "^0.13.5",
     "tailwindcss": "^1.4.6"
   }
 }
