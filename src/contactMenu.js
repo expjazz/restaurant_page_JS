@@ -1,6 +1,8 @@
 import eventListeners from './event_listeners';
 import grabElements from './elements';
 import { navbar } from './navbar';
+import footer from './footer';
+
 
 const regeneratorRuntime = require('regenerator-runtime');
 const menuApi = require('./menuApi');
@@ -46,6 +48,8 @@ const showMenu = async (e) => {
     .join('')} 
 
     </div>
+    ${footer.footer}  
+
   </div>
 </div>`;
   eventListeners.eventListeners(grabElements.grabElements());

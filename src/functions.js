@@ -56,6 +56,16 @@ const showFormOpposite = (e) => {
   }
 };
 
+const darkMode = (e) => {
+  e.preventDefault();
+  const content = document.querySelector('.container-fluid');
+  content.classList.toggle('contentDark');
+  content.classList.toggle('h-100');
+  content.classList.toggle('h-1000');
+  document.querySelector('.container').classList.toggle('bg-dark');
+  document.querySelectorAll('.card').forEach((card) => card.classList.toggle('bg-secondary'));
+};
+
 export {
-  handleEnter, handleLeave, showForm, showFormOpposite,
+  handleEnter, handleLeave, showForm, showFormOpposite, darkMode,
 };

@@ -2,6 +2,7 @@
 import eventListeners from './event_listeners';
 import grabElements from './elements';
 import { navbar } from './navbar';
+import footer from './footer';
 
 const menuApi = require('./menuApi');
 
@@ -62,7 +63,14 @@ const renderPageOne = async () => {
   }).join('')}
   </div>
   </div>
-    `;
+  </div>
+  
+  
+  ${footer.footer}  
+  </div>
+  </div>
+
+  `;
   eventListeners.eventListeners(grabElements.grabElements());
 };
 

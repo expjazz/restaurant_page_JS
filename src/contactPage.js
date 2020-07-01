@@ -3,6 +3,7 @@ import eventListeners from './event_listeners';
 import grabElements from './elements';
 import { navbar } from './navbar';
 
+import footer from './footer';
 
 const showContact = (e) => {
   e.preventDefault();
@@ -31,6 +32,8 @@ const showContact = (e) => {
     </div>
       </form>
       </div>
+  </div>
+  ${footer.footer}  
   </div>
 </div>`;
   eventListeners.eventListeners(grabElements.grabElements());

@@ -8,6 +8,7 @@ function grabElements() {
     menuBtn: document.getElementById('menu-btn'),
     form: document.getElementById('contactForm'),
     formBtn: document.getElementById('formBtn'),
+    darkModeBtn: document.getElementById('darkModeBtn'),
 
   };
 }
