@@ -1,4 +1,6 @@
 
+/* eslint-disable import/no-cycle */
+
 import eventListeners from './event_listeners';
 import grabElements from './elements';
 import { navbar } from './navbar';

@@ -1,3 +1,6 @@
+/* eslint-disable import/no-cycle */
+
+
 import eventListeners from './event_listeners';
 import grabElements from './elements';
 import { navbar } from './navbar';
@@ -5,7 +8,6 @@ import footer from './footer';
 import darkStatus from './index';
 
 
-const regeneratorRuntime = require('regenerator-runtime');
 const menuApi = require('./menuApi');
 
 const showMenu = async (e) => {
@@ -13,7 +15,6 @@ const showMenu = async (e) => {
   const data = await menuApi.foodAwait();
   const data2 = await menuApi.foodAwait();
   const data3 = await menuApi.foodAwait();
-  console.log(data);
 
   const data4 = await menuApi.foodAwait();
   const mealList = [data, data2, data3, data4];

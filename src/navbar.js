@@ -1,3 +1,5 @@
+/* eslint-disable import/prefer-default-export */
+
 const navbar = `    <div class="navbar navbar-expand-lg ml-5">
   <div class="dropdownBackground">
     <span class="arrow"></span>

@@ -1,3 +1,6 @@
+/* eslint-disable import/no-cycle */
+
+
 import elements from './elements';
 import darkStatus from './index';
 
@@ -37,9 +40,8 @@ const handleLeave = (e) => {
 
 const showForm = (e) => {
   e.preventDefault();
-  console.log('a');
+  document.querySelector('.container-fluid').classList.toggle('h-100');
   const { form } = elements.grabElements();
-  console.log(form);
   if (!form.classList.contains('active-op')) {
     form.classList.add('active');
     setTimeout(() => form.classList.add('active-op'), 150);
@@ -48,7 +50,6 @@ const showForm = (e) => {
 
 const showFormOpposite = (e) => {
   e.preventDefault();
-  console.log('b');
   const { form } = elements.grabElements();
   if (form.classList.contains('active-op')) {
     form.classList.remove('active-op');
