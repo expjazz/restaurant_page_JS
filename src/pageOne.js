@@ -10,10 +10,11 @@ const renderPageOne = async () => {
   const data = await menuApi.foodAwait();
   const data2 = await menuApi.foodAwait();
   const data3 = await menuApi.foodAwait();
-  console.log(data);
 
   const data4 = await menuApi.foodAwait();
-  const mealList = [data, data2, data3, data4];
+  const data5 = await menuApi.foodAwait();
+
+  const mealList = [data, data2, data3, data4, data5];
   const content = document.querySelector('.content');
   content.innerHTML = `   <div class="container-fluid h-100 pt-5 w-100 bg-light">
   <div class="container mt-3 shadow-lg content">
@@ -129,64 +130,7 @@ const renderPageOne = async () => {
   }).join('')}
   </div>
   </div>
-      <div class="col-7 p-5">
-        <div class="card border-rounded p-5">
-          <img
-            class="card-img-top"
-            src="https://images.pexels.com/photos/3821692/pexels-photo-3821692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <h4 class="card-title">Some Food</h4>
-            <p class="card-text">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Sapiente, ratione.
-            </p>
-            <a href="#!" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-5 p-5">
-        <div class="row">
-          <div class="col-6">
-            <div class="card border-rounded bg-light">
-              <img
-                class="card-img-top"
-                src="https://images.pexels.com/photos/3821692/pexels-photo-3821692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                alt="Card image cap"
-              />
-              <div class="card-body">
-                <h4 class="card-title">Some Food</h4>
-                <p class="card-text">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Sapiente, ratione.
-                </p>
-                <a href="#!" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="card border-rounded bg-light">
-              <img
-                class="card-img-top"
-                src="https://images.pexels.com/photos/3821692/pexels-photo-3821692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                alt="Card image cap"
-              />
-              <div class="card-body">
-                <h4 class="card-title">Some Food</h4>
-                <p class="card-text">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Sapiente, ratione.
-                </p>
-                <a href="#!" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>`;
+    `;
   eventListeners.eventListeners(grabElements.grabElements());
 };
 

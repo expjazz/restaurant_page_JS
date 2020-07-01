@@ -35,4 +35,11 @@ const handleLeave = (e) => {
   setTimeout(() => dropdownEffects.classList.remove('trigger-enter-active'), 150);
 };
 
-export { handleEnter, handleLeave };
+const showForm = (e) => {
+  e.preventDefault();
+  const { form } = elements.grabElements();
+  form.classList.add('active');
+  setTimeout(() => form.classList.add('active-op'), 150);
+};
+
+export { handleEnter, handleLeave, showForm };

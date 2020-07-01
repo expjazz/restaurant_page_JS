@@ -56,7 +56,26 @@ const showContact = (e) => {
         </li>
       </ul>
     </div>
-    <div class="row"></div>
+    <div class="row">
+      <div class="col-9 mx-auto">
+        <div class="contact mx-auto text-center">
+          <button class="btn btn-primary mx-auto" id="formBtn"> Click here to send us a message with us </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-9 text-center mx-auto"> 
+        <form id="contactForm">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <div class="form-group">
+      <label for="exampleFormControlTextarea1">Example textarea</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+      </form>
+      </div>
   </div>
 </div>`;
   eventListeners.eventListeners(grabElements.grabElements());

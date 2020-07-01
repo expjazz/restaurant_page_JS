@@ -6,6 +6,8 @@ function grabElements() {
     homeBtn: document.getElementById('home-btn'),
     contactBtn: document.getElementById('contact-btn'),
     menuBtn: document.getElementById('menu-btn'),
+    form: document.getElementById('contactForm'),
+    formBtn: document.getElementById('formBtn'),
 
   };
 }

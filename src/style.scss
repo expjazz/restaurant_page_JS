@@ -72,3 +72,17 @@
   background: $dark;
   transform: translateY(-50%) rotate(45deg);
 }
+
+form {
+  opacity: 0;
+  display: none;
+  transition: all 1s linear;
+}
+
+form .active {
+  display: block;
+}
+
+form .active-op {
+  opacity: 1;
+}
