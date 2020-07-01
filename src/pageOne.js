@@ -40,7 +40,7 @@ const renderPageOne = async () => {
               <p class="card-text">
               ${recipes.meals[0].strCategory}
               </p>
-              <a href="#!" class="btn btn-primary">Go somewhere</a>
+              <a href="#!" class="btn btn-primary">See more</a>
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@ const renderPageOne = async () => {
         ${recipes.meals[0].strCategory}
 
           </p>
-          <a href="#!" class="btn btn-primary">Go somewhere</a>
+          <a href="#!" class="btn btn-primary">See more</a>
         </div>
       </div>
     </div>`;
