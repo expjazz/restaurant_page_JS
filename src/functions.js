@@ -6,20 +6,22 @@ const handleEnter = (e) => {
   e.target.classList.add('trigger-enter');
   setTimeout(() => e.target.classList.add('trigger-enter-active'), 150);
   dropdownBackground.classList.add('open');
-  const dropdownEffects = e.target.querySelector('.dropdown-effect');
-  dropdownEffects.classList.add('trigger-enter');
-  setTimeout(() => dropdownEffects.classList.add('trigger-enter-active'), 150);
+  const dropdown = e.target.querySelector('.dropdown-effect');
+  const dropdownCoords = dropdown.getBoundingClientRect();
+  const navCoords = navbar.getBoundingClientRect();
+  const coords = {
+    height: dropdownCoords.height,
+    width: dropdownCoords.width,
+    top: dropdownCoords.top - navCoords.top,
+    left: dropdownCoords.left - document.getElementById('restaurant').getBoundingClientRect().left,
 
-  const navbarCoordinates = navbar.getBoundingClientRect();
-  const dropdownCoordinates = e.target.querySelector('.dropdown-effect').getBoundingClientRect();
-  const { width } = dropdownCoordinates;
-  const { height } = dropdownCoordinates;
-  const top = dropdownCoordinates.top - navbarCoordinates.top + 60;
-  const left = dropdownCoordinates.left - navbarCoordinates.left - 25;
-  dropdownBackground.style.width = `${width}px`;
-  dropdownBackground.style.height = `${height}px`;
-  dropdownBackground.style.transform = `translate(${left}px, ${top}px)`;
+  };
+
+  dropdownBackground.style.setProperty('width', `${coords.width}px`);
+  dropdownBackground.style.setProperty('height', `${coords.height}px`);
+  dropdownBackground.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
 };
+
 
 const handleLeave = (e) => {
   const { dropdownBackground } = elements.grabElements();

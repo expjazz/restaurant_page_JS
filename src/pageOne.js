@@ -17,11 +17,11 @@ const renderPageOne = async () => {
   const content = document.querySelector('.content');
   content.innerHTML = `   <div class="container-fluid h-100 pt-5 w-100 bg-light">
   <div class="container mt-3 shadow-lg content">
-    <div class="navbar navbar-expand-lg">
+    <div class="navbar navbar-expand-lg ml-5">
       <div class="dropdownBackground">
         <span class="arrow"></span>
       </div>
-      <a href="#" class="navbar-brand text-black-50 font-weight-bold"
+      <a href="#" class="navbar-brand text-black-50 font-weight-bold" id="restaurant"
         >My Restaurant</a
       >
       <ul class="navbar-nav">
@@ -31,8 +31,17 @@ const renderPageOne = async () => {
           >
           <div class="dropdown-effect">
             <div class="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
-              iusto?
+              <div class="p-0 d-flex flex-column">
+                <p class='nav-item'> 
+                  Info about the Chef
+                </p>
+                <p> 
+                Promotions
+              </p>
+              <p> 
+              Our History
+            </p>
+              </div>
             </div>
           </div>
         </li>
@@ -41,8 +50,19 @@ const renderPageOne = async () => {
             >Contact</a
           >
           <div class="dropdown-effect">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
-            iusto?
+            <div class="">
+              <div class="p-0 d-flex flex-column">
+                <p class='nav-item'> 
+                  Email
+                </p>
+                <p> 
+                Facebook
+              </p>
+              <p> 
+              Twitter
+            </p>
+              </div>
+            </div>
           </div>
         </li>
         <li class="nav-item w-50">
@@ -50,8 +70,19 @@ const renderPageOne = async () => {
             >Menu</a
           >
           <div class="dropdown-effect">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
-            iusto?
+            <div class="">
+              <div class="p-0 d-flex flex-column">
+                <p class='nav-item'> 
+                  Dishes most wanted
+                </p>
+                <p> 
+                Suggestion
+              </p>
+              <p> 
+              Special Offers
+            </p>
+              </div>
+            </div>
           </div>
         </li>
       </ul>

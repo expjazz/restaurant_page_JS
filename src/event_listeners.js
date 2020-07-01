@@ -12,6 +12,7 @@ const eventListeners = async (elements) => {
     trigger.addEventListener('mouseenter', functions.handleEnter);
   });
 
+
   dropdownTrigger.forEach((trigger) => {
     trigger.addEventListener('mouseleave', functions.handleLeave);
   });
