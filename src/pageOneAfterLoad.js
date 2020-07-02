@@ -1,14 +1,13 @@
 /* eslint-disable import/no-cycle */
 import eventListeners from './event_listeners';
 import grabElements from './elements';
-import { navbar } from './navbar';
-import footer from './footer';
+
 import darkStatus from './index';
 
 const menuApi = require('./menuApi');
 
 
-const renderPageOneFirst = async () => {
+const renderPageOne = async () => {
   let count = 0;
   const data = await menuApi.foodAwait();
   const data2 = await menuApi.foodAwait();
@@ -18,15 +17,11 @@ const renderPageOneFirst = async () => {
   const data5 = await menuApi.foodAwait();
 
   const mealList = [data, data2, data3, data4, data5];
-  const content = document.querySelector('.content');
-
-  const middleContent = document.createElement('div');
-  middleContent.classList = `<div class="container-fluid 
-  pt-5 w-100 ${darkStatus.darkModeObj.status ? 'contentDark h-1000' : 'bg-light h-100'}">`;
-  middleContent.innerHTML = `
-  <div class="container ${darkStatus.darkModeObj.status ? 'bg-dark' : ''}  mt-3 shadow-lg content" id="container">
-    ${navbar}
-    <div class='contentWrapper'>
+  const content = document.getElementById('container');
+  content.removeChild(content.children[1]);
+  const mainContent = document.createElement('div');
+  mainContent.classList = 'contentWrapper';
+  mainContent.innerHTML = `
 
     <div class="row">
       ${mealList.map((recipes) => {
@@ -72,15 +67,12 @@ const renderPageOneFirst = async () => {
   </div>
   </div>
   
-  
-  </div>
-  ${footer.footer}  
-  </div>
+
 
   `;
-  content.appendChild(middleContent);
+  content.insertBefore(mainContent, content.querySelector('.row'));
 
   eventListeners.eventListeners(grabElements.grabElements());
 };
 
-export default { renderPageOneFirst };
+export default { renderPageOne };

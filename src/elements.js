@@ -12,5 +12,4 @@ function grabElements() {
 
   };
 }
-// const pageOneButton = document.getElementById('pageOneBtn');
 export default { grabElements };

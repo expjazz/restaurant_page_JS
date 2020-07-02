@@ -3,7 +3,7 @@
 import * as functions from './functions';
 import showContact from './contactPage';
 import showMenu from './contactMenu';
-import renderPageOne from './pageOne';
+import renderPageOne from './pageOneAfterLoad';
 
 const eventListeners = async (elements) => {
   const {

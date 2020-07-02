@@ -22,8 +22,9 @@ const showMenu = async (e) => {
   content.innerHTML = `         <div class="container-fluid 
   
   pt-5 w-100 ${darkStatus.darkModeObj.status ? 'contentDark h-1000' : 'bg-light h-100'}">
-  <div class="container ${darkStatus.darkModeObj.status ? 'bg-dark' : ''}  mt-3 shadow-lg content">
+  <div class="container ${darkStatus.darkModeObj.status ? 'bg-dark' : ''}  mt-3 shadow-lg content" id="container">
   ${navbar}
+  <div class='contentWrapper'>
 
     <div class='row'> 
       <div  class='col-9 mx-auto'> 
@@ -52,6 +53,8 @@ const showMenu = async (e) => {
     .join('')} 
 
     </div>
+    </div>
+
     ${footer.footer}  
 
   </div>

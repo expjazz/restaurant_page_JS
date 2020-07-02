@@ -4,6 +4,6 @@ import 'bootstrap';
 import renderPageOne from './pageOne';
 
 const darkModeObj = { status: false };
-renderPageOne.renderPageOne();
+renderPageOne.renderPageOneFirst();
 
 export default { darkModeObj };

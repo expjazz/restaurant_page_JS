@@ -11,11 +11,12 @@ import footer from './footer';
 const showContact = (e) => {
   e.preventDefault();
   const content = document.querySelector('.content');
-  content.innerHTML = `        <div class="container-fluid 
+  content.innerHTML = ` <div class="container-fluid 
   
   pt-5 w-100 ${darkStatus.darkModeObj.status ? 'contentDark h-1000 h-100' : ''}">
-  <div class="container ${darkStatus.darkModeObj.status ? 'bg-dark' : ''}  mt-3 shadow-lg content">
+  <div class="container ${darkStatus.darkModeObj.status ? 'bg-dark' : ''}  mt-3 shadow-lg content" id="container">
   ${navbar}
+  <div class='contentWrapper'>
 
     <div class="row">
       <div class="col-9 mx-auto">
@@ -38,6 +39,8 @@ const showContact = (e) => {
       </form>
       </div>
   </div>
+  </div>
+
   ${footer.footer}  
   </div>
 </div>`;
