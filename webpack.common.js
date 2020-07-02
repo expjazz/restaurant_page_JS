@@ -1,25 +1,13 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+/* eslint-disable import/no-extraneous-dependencies */
 
 module.exports = {
-  entry: './src/index.js',
-
-  plugins: [new HtmlWebpackPlugin(
-    { template: './src/template.html' },
-  )],
+  entry: {
+    main: './src/index.js',
+    vendor: './src/vendor.js',
+  },
   module: {
     rules: [
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
-        ],
-      },
+
       {
         test: /\.html$/,
         use: ['html-loader'],
