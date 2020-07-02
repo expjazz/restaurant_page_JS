@@ -1,8 +1,7 @@
 /* eslint-disable import/no-cycle */
-import eventListeners from './event_listeners';
-import grabElements from './elements';
 
 import darkStatus from './index';
+import grabElements from './elements';
 
 const menuApi = require('./menuApi');
 
@@ -17,7 +16,7 @@ const renderPageOne = async () => {
   const data5 = await menuApi.foodAwait();
 
   const mealList = [data, data2, data3, data4, data5];
-  const content = document.getElementById('container');
+  const { content } = grabElements.grabElements();
   content.removeChild(content.children[1]);
   const mainContent = document.createElement('div');
   mainContent.classList = 'contentWrapper';
@@ -71,8 +70,6 @@ const renderPageOne = async () => {
 
   `;
   content.insertBefore(mainContent, content.querySelector('.row'));
-
-  eventListeners.eventListeners(grabElements.grabElements());
 };
 
 export default { renderPageOne };

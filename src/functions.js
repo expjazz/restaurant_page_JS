@@ -40,7 +40,7 @@ const handleLeave = (e) => {
 
 const showForm = (e) => {
   e.preventDefault();
-  document.querySelector('.container-fluid').classList.toggle('h-100');
+  document.getElementById('containerFluid').classList.toggle('h-100');
   const { form } = elements.grabElements();
   if (!form.classList.contains('active-op')) {
     form.classList.add('active');
@@ -59,11 +59,10 @@ const showFormOpposite = (e) => {
 
 const darkMode = (e) => {
   e.preventDefault();
-  const content = document.querySelector('.container-fluid');
+  const content = document.getElementById('containerFluid');
   content.classList.toggle('contentDark');
-  content.classList.toggle('h-100');
   content.classList.toggle('h-1000');
-  document.querySelector('.container').classList.toggle('bg-dark');
+  document.getElementById('container').classList.toggle('bg-dark');
   document.querySelectorAll('.card').forEach((card) => card.classList.toggle('bg-secondary'));
   darkStatus.darkModeObj.status = !darkStatus.darkModeObj.status;
 };

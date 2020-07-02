@@ -1,22 +1,15 @@
 
 /* eslint-disable import/no-cycle */
-
-import eventListeners from './event_listeners';
+import * as functions from './functions';
 import grabElements from './elements';
-import { navbar } from './navbar';
-import darkStatus from './index';
-
-import footer from './footer';
 
 const showContact = (e) => {
   e.preventDefault();
-  const content = document.querySelector('.content');
-  content.innerHTML = ` <div class="container-fluid 
-  
-  pt-5 w-100 ${darkStatus.darkModeObj.status ? 'contentDark h-1000 h-100' : ''}">
-  <div class="container ${darkStatus.darkModeObj.status ? 'bg-dark' : ''}  mt-3 shadow-lg content" id="container">
-  ${navbar}
-  <div class='contentWrapper'>
+  const { content } = grabElements.grabElements();
+  content.removeChild(content.children[1]);
+  const mainContent = document.createElement('div');
+  mainContent.classList = 'contentWrapper';
+  mainContent.innerHTML = `
 
     <div class="row">
       <div class="col-9 mx-auto">
@@ -39,12 +32,12 @@ const showContact = (e) => {
       </form>
       </div>
   </div>
-  </div>
+`;
 
-  ${footer.footer}  
-  </div>
-</div>`;
-  eventListeners.eventListeners(grabElements.grabElements());
+  content.insertBefore(mainContent, content.querySelector('.row'));
+  const formBtn = document.getElementById('formBtn');
+  formBtn.addEventListener('click', functions.showForm);
+  formBtn.addEventListener('click', functions.showFormOpposite);
 };
 
 export default { showContact };

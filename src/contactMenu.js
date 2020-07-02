@@ -1,11 +1,8 @@
 /* eslint-disable import/no-cycle */
 
 
-import eventListeners from './event_listeners';
-import grabElements from './elements';
-import { navbar } from './navbar';
-import footer from './footer';
 import darkStatus from './index';
+import grabElements from './elements';
 
 
 const menuApi = require('./menuApi');
@@ -18,13 +15,11 @@ const showMenu = async (e) => {
 
   const data4 = await menuApi.foodAwait();
   const mealList = [data, data2, data3, data4];
-  const content = document.querySelector('.content');
-  content.innerHTML = `         <div class="container-fluid 
-  
-  pt-5 w-100 ${darkStatus.darkModeObj.status ? 'contentDark h-1000' : 'bg-light h-100'}">
-  <div class="container ${darkStatus.darkModeObj.status ? 'bg-dark' : ''}  mt-3 shadow-lg content" id="container">
-  ${navbar}
-  <div class='contentWrapper'>
+  const { content } = grabElements.grabElements();
+  content.removeChild(content.children[1]);
+  const mainContent = document.createElement('div');
+  mainContent.classList = 'contentWrapper';
+  mainContent.innerHTML = ` 
 
     <div class='row'> 
       <div  class='col-9 mx-auto'> 
@@ -53,13 +48,8 @@ const showMenu = async (e) => {
     .join('')} 
 
     </div>
-    </div>
-
-    ${footer.footer}  
-
-  </div>
-</div>`;
-  eventListeners.eventListeners(grabElements.grabElements());
+`;
+  content.insertBefore(mainContent, content.querySelector('.row'));
 };
 
 export default { showMenu };

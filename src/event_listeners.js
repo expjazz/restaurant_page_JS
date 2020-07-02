@@ -7,7 +7,7 @@ import renderPageOne from './pageOneAfterLoad';
 
 const eventListeners = async (elements) => {
   const {
-    dropdownTrigger, menuBtn, contactBtn, homeBtn, formBtn, darkModeBtn,
+    dropdownTrigger, menuBtn, contactBtn, homeBtn, darkModeBtn,
   } = elements;
 
   dropdownTrigger.forEach((trigger) => {
@@ -23,10 +23,6 @@ const eventListeners = async (elements) => {
   menuBtn.addEventListener('click', showMenu.showMenu);
   homeBtn.addEventListener('click', renderPageOne.renderPageOne);
   darkModeBtn.addEventListener('click', functions.darkMode);
-  if (homeBtn && formBtn) {
-    formBtn.addEventListener('click', functions.showForm);
-    formBtn.addEventListener('click', functions.showFormOpposite);
-  }
 };
 
 export default { eventListeners };

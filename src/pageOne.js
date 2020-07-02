@@ -21,8 +21,9 @@ const renderPageOneFirst = async () => {
   const content = document.querySelector('.content');
 
   const middleContent = document.createElement('div');
-  middleContent.classList = `<div class="container-fluid 
-  pt-5 w-100 ${darkStatus.darkModeObj.status ? 'contentDark h-1000' : 'bg-light h-100'}">`;
+  middleContent.classList = `container-fluid 
+  pt-5 w-100 ${darkStatus.darkModeObj.status ? 'contentDark h-1000' : 'bg-light'}`;
+  middleContent.id = 'containerFluid';
   middleContent.innerHTML = `
   <div class="container ${darkStatus.darkModeObj.status ? 'bg-dark' : ''}  mt-3 shadow-lg content" id="container">
     ${navbar}

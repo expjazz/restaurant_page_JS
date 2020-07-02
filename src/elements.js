@@ -9,6 +9,7 @@ function grabElements() {
     form: document.getElementById('contactForm'),
     formBtn: document.getElementById('formBtn'),
     darkModeBtn: document.getElementById('darkModeBtn'),
+    content: document.getElementById('container'),
 
   };
 }
