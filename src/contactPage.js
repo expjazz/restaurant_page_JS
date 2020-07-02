@@ -6,6 +6,8 @@ import grabElements from './elements';
 const showContact = (e) => {
   e.preventDefault();
   const { content } = grabElements.grabElements();
+  content.parentElement.classList.add('h-100');
+
   content.removeChild(content.children[1]);
   const mainContent = document.createElement('div');
   mainContent.classList = 'contentWrapper';

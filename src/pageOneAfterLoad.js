@@ -17,6 +17,8 @@ const renderPageOne = async () => {
 
   const mealList = [data, data2, data3, data4, data5];
   const { content } = grabElements.grabElements();
+  content.parentElement.classList.remove('h-100');
+
   content.removeChild(content.children[1]);
   const mainContent = document.createElement('div');
   mainContent.classList = 'contentWrapper';

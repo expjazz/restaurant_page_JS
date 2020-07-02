@@ -40,7 +40,6 @@ const handleLeave = (e) => {
 
 const showForm = (e) => {
   e.preventDefault();
-  document.getElementById('containerFluid').classList.toggle('h-100');
   const { form } = elements.grabElements();
   if (!form.classList.contains('active-op')) {
     form.classList.add('active');
